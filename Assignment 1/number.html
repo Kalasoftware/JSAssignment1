@@ -1,0 +1,106 @@
+<html> 
+    <head> 
+            <title> Number </title>
+            <style> 
+
+            body,input,button{
+                font-size: 1.2em;
+            }
+            .output{
+                border: 2px black solid;
+                 width: auto; 
+                 height: 200px;
+                 
+            }
+            
+
+            </style>
+    </head>
+    <body> 
+        <form name="f1" id="forms1">
+            Enter the Number : <input name="revnum" placeholder="Reverse"> 
+            <button type="button" onclick="revnumer()"> Reverse  </button>
+
+            <hr> 
+            Enter the Temp : <input name="degr" placeholder="Degrees"> 
+            <button type="button" onclick="degconv()" > Convert </button>
+
+            <hr> 
+            Enter the Number (Prime or !Prime) : <input type="number" name="pnum" placeholder="Number"> 
+            <button type="button" onclick="pcheck()" > Check </button>
+
+            <hr>
+            Enter the Number to get factorial : <input type="number" name="fct" placeholder="Factorial">
+            <button type="button" onclick="fact()"> Get </button>
+
+        </form>
+        <hr> 
+        <label> Output BOX </label>
+        <h3 class="output">     
+
+        </h3>
+    </body>
+
+    <script>
+
+        /* Reverse the number function */
+        function revnumer()
+        {
+            let v = document.forms["f1"].revnum.value
+            let z = v.split("").reverse().join("")
+            
+            document.querySelector(".output").innerHTML = "The reversed number is = " + z;
+        }
+
+        /* Function to convert degree into celsius and farehnhit */
+
+        function degconv()
+        {
+            let d = forms1.degr.value
+            let c = ((d-32))*(5/9)
+            let f = (d*(9/5)) + 32
+            document.querySelector(".output").innerHTML = f + " Farenhit and " + c + " Celsius " ;
+        }
+
+        /* Prime or not check */
+
+        function pcheck()
+        {
+            let n = forms1.pnum.value
+            let p = true
+            for(var i = 2 ; i<n; i++)
+            {
+                if(n % i == 0)
+                {
+                    p = false;
+                    break;
+                }
+            }
+            document.querySelector(".output").innerHTML = p?("Prime"):("Not prime")
+        }
+
+        /* Factorial */
+
+        function fact()
+        {
+            let factnum = forms1.fct.value
+
+            function fctt(n)
+            {
+                if(n == 0)
+                {
+                    return 1
+                }
+                else if(n > 0 )
+                {
+                    return n*fctt(n-1);
+                }
+            }
+
+            let ans = fctt(factnum)
+
+            document.querySelector(".output").innerHTML = "Factorial = " + ans;
+        }
+
+    </script>
+</html>

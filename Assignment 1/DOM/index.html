@@ -1,0 +1,49 @@
+<html>
+    <head> 
+
+    </head>
+    <body>
+        <h1 > odd even check </h1>
+
+        <form name="form1" method="post" action="" > 
+            <input name="t1"> </input>
+           
+        </form>
+        <button onclick="myfun()"> Click to click</button>
+        <button onclick="revstr()" > Reverse string </button>
+        <div id="result" > </div>
+
+        <div class="second"> 
+
+        </div>
+
+
+    </body>
+
+    <script> 
+    
+         document.querySelector("h1").innerHTML = "here is the text written using javascript";
+        
+
+        var x = document.forms["form1"].t1;
+
+      function  myfun()
+        {
+            var y = x.value;
+            if(document.forms["form1"].t1.value %2==0){
+               document.getElementById("result").innerHTML = "Even";
+            }
+            else 
+            document.getElementById("result").innerHTML = "odd";
+        }
+        
+        function revstr()
+        {
+            var str = document.forms["form1"].t1.value;
+            var rstr = str.reverse();
+            document.querySelector(".second").innerHTML = rstr.reverse()
+        }
+        
+
+    </script>
+</html>

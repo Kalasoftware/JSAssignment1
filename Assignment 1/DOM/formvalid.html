@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title> Form Validation </title>
+    </head>
+    <body>
+        <form id="regForm" name="regForm" onsubmit="" action="#" >
+            <p> Enter the Name <input id="namein" name="namein" oninput="v_name()" >  </p> <span id="nm_err" style="color:red;"> </span>
+            <p> Enter the Email <input id="emailin" name="emailin" oninput="e_name()" type="email" >  </p> <span id="em_err" style="color:red;"> </span>
+
+            Gender: <input type="radio" name="gender" value="male"> Male 
+                    <input type="radio" name="gender" value="female" > Female
+                    <br>
+              Check Your Hobbies   <input type="checkbox" name="hobbies[]" value="reading"> Reading
+                                    <input type="checkbox" name="hobbies[]" value="writing"> Writing
+                                    <input type="checkbox" name="hobbies[]" value="programming"> Programming
+
+            <br>
+            <span id="errorcall"> </span>
+            <span id="checkboxcall"> </span>
+            <button type="button" onclick="formvalid()">Submit</button>
+            <button type="reset"> Reset </button>
+        </form>
+    </body>
+    <script>
+
+        function v_name()
+        {
+            var namei = document.forms[0].namein;
+            
+            if(namei.value.length < 3)
+            {
+                nm_err.innerHTML = "Name Length is Not Valid ";
+                return false;
+            }
+            else 
+            {
+                nm_err.style.color="green"
+                nm_err.innerHTML = "input ok";
+                return true;
+            }
+        }
+
+       
+
+        function e_name()
+        {
+            var emaili = document.forms[0].emailin;
+            if(emaili.value.length < 5)
+            {
+                em_err.innerHTML = "Name Length is Not Valid ";
+                return false;
+            }
+            else 
+            {
+                em_err.style.color="green"
+                em_err.innerHTML = "input ok";
+                return true;
+            }
+        }
+
+        function formvalid()
+        {
+            if(v_name() == true && e_name() == true)
+            {
+                var text ;
+               var v = document.forms[0].gender[0].value
+               errorcall.innerHTML = v;
+                if(document.forms[0].gender[0].checked == false && document.forms[0].gender[1].checked == false)
+                {
+                   text = "radio  is Not Valid ";
+                }
+                else 
+                {
+                   text = "Radio  is  Valid ";
+                } 
+
+
+                var hobbies = ""
+
+                var hobbiele =document.getElementsByName("hobbies[]");
+
+                for(var i =0; i<hobbiele.length; i++)
+                {   
+                    if(hobbiele[i].checked)
+                    {
+                        hobbies += " " + hobbiele[i].value;
+                    }
+                    
+                }
+                if(hobbies === "")
+                {
+                    checkboxcall.innerHTML = " Not Checkbox is selected ";
+                }
+                else{
+                    checkboxcall.innerHTML = " Validated " + hobbies;
+                }
+
+            errorcall.innerHTML = text
+
+            }
+           else 
+           {
+
+           }
+
+          
+        }
+
+
+
+    </script>
+</html>

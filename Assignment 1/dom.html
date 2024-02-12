@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="/js/dom.js" type="text/JavaScript"> </script>
+</head>
+
+<body>
+    <!--  Write a JavaScript function to add rows to a table -->
+    <div class="q21">
+        <h3> Add Row in Table </h3>
+        <table id="myTable" border="1px solid black">
+            <tr>
+                <td> Cell1</td>
+                <td> Cell2</td>
+            </tr>
+        </table>
+        <button onclick="addNewrow()"> Add Row </button>
+        <hr>
+    </div>
+    <!-- Write a program to count and display all H1 elements on the document. -->
+    <h3> Count All h1 elements </h3>
+    <div class="q22">
+        <h1> </h1>
+        <h1> belongs to this </h1>
+        <h1> some name</h1>
+        <button type="button" onclick="ch1()">Count Tags </button> <br>
+        <span id="h1result"> </span>
+    </div>
+    <hr>
+    <!--  Write a program to change color of all paragraphs as per input given in text box. -->
+    <div class="23">
+        <h3> Color of paragraph using users input </h3>
+        Enter the color name :<input id="colorinput" />
+        <p id="paracolor"> HERE ARE SOME TEXTS TO DEMO THE COLOR CHANGE ALWAYS </p>
+        <button onclick="changeParaColor()"> change color </button>
+    </div>
+    <hr>
+
+    <!-- Write a program to change dimensions (height and width) of the image as per input given
+in text boxes -->
+    <div class="q24">
+        <h3> Resize the image using input box </h3>
+        Enter the width : <input type="number" id="imgWidth"> px <br>
+        Enter the Height : <input type="number" id="imgHeight">px <br>
+        <button onclick="imgResize()"> Resize </button>
+        <img id="imgre" src="new.jpg" alt="image is here " height="100px" width="100px">
+        <hr>
+    </div>
+
+    <!-- Write a program to display all the elements(textbox, radio etc.) of a form along with their
+values -->
+
+    <!-- Write a program to count and display the items of a dropdown list, in an alert window -->
+    <div class="q26">
+        <h3> Count and display options of drop down </h3>
+        <select id="dropwala">
+            <option value="" onchange="cdropitem()"> Select </option>
+            <option value="JavaScript"> JavaScript</option>
+            <option value="RDBMS"> RDBMS</option>
+            <option value="VBNET"> VBNET</option>
+        </select>
+        <button onclick="cdropitem()"> Count And Show values </button>
+        <hr>
+    </div>
+
+    <!-- Write a program to populate a combo using given array elements -->
+    <h3> populate combobox </h3>
+    <div class="textoption">
+        Enter the countries Names: <input id="addcinput">
+        <button type="button" id="addinbtn" onclick="adinc()"> Add To Options </button>
+        <br>
+        <h3> Select the country from Here </h3>
+        <select id="addincountry"> </select>
+        <span id="resultforcount"></span>
+    </div>
+    <hr>
+
+    <!-- Write a JavaScript program to get the width and height of the window (any time the
+window is resized). -->
+    <div class="q28">
+        <h3> Live resize of window get height and width </h3>
+        <p id="resizeWindow">
+
+        </p>
+        <hr>
+    </div>
+
+</body>
+<script>
+
+</script>
+
+</html>

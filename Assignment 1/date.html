@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date </title>
+    <script src="/js/date.js"></script>
+</head>
+
+<body>
+    <!-- Date Difference Calculater  -->
+    <div class="q11">
+        <h3> Date Difference Calculater </h3>
+        <br>
+        Enter the First Date : <input type="date" id="date1" />
+        Enter the Second Date : <input type="date" id="date2" />
+        <p id="diffresult"> </p>
+        <button onclick="dateDiff()"> Find </button>
+        <hr>
+    </div>
+    <!-- year is loop or not  -->
+    <div class="10">
+        <h3> Leap Year Checker </h3>
+        Enter the year : <input oninput="leapYearCheck()" type="number" id="inputYear" placeholder="eg:2018">
+        <span id="leapresult"></span>
+        <hr>
+    </div>
+    <!-- Age calculator using date -->
+    <div class="q12">
+        <h3> calculate Your Age </h3>
+        Select The Birth Date : <input id="agecal" type="date">
+        <span id="ageResult"> </span>
+        <button onclick="calAge()"> Calculate Age </button>
+    </div>
+</body>
+
+</html>

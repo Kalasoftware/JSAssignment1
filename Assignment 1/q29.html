@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-29 FORM Validation </title>
+</head>
+
+<body>
+    <h3> Form </h3>
+    <form id="regForm" name="regForm" onsubmit="return validforms()">
+        <label> Name</label> <input type="text" id="namein"
+            oninput="namevalid(this,document.getElementById('name1err'))"> <span id="name1err"> </span> <br>
+        <label> Gender</label><input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female <span id="gender1error"> </span><br>
+        <labal> Age </labal> <input type="number" min="15" max="20"
+            oninput="validAge(this,document.getElementById('ageerr'))"> <span id="ageerr"> </span>
+            <button value="submit"> Submit </button>
+    <button value="reset"> Reset </button>
+        </form>
+
+        
+</body>
+
+<script>
+
+    function namevalid(name1, name1error) {
+        if (name1.value == "") {
+            name1error.innerHTML = "bro Not Verfied length";
+            name1.focus();
+            return false;
+        }
+        else {
+            name1error.innerHTML = "Verfied length";
+            return true;
+        }
+    }
+
+    function gendervalid() {
+        var genval = document.forms["regForm"]["gender"];
+
+        if (!genval[0].checked ) {
+            gender1error.innerHTML = "Please Choose Gender ";
+            return false;
+
+        }
+        else {
+            return true;
+        }
+    }
+
+    function validAge(age, ageerror) {
+        if (age.value < 15 || age.value > 20) {
+            ageerror.innerHTML = "Not Valid Age Age Must be between 15-20";
+            return false;
+        }
+        else {
+            ageerror.innerHTML = "valid Age ";
+            return true;
+        }
+    }
+
+    function validforms() {
+
+        if(namevalid() && gendervalid() && validAge())
+        {
+            console.log("form validated");
+            return false;
+        }
+        else 
+        {
+            alert("please fill the form details ");
+            return false;
+        }
+        alert("new ");
+        return false;
+    }
+</script>
+
+</html>

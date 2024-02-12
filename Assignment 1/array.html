@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array </title>
+</head>
+
+<body>
+    <!-- . Write a program to find the largest of five numbers. Display an alert box to show the result-->
+    <div class="q13">
+        <h3> Largest Number Finder </h3>
+        Enter The Number : <input id="inputarr" placeholder="eg: 54,56">
+        <input type="button" value="Calculate" onclick="cal()">
+        <hr>
+    </div>
+    <!--Write a program to compute the sum of an array of integers-->
+    <div class="q14">
+        <h3> Sum OF Array </h3>
+        Enter The Array To Sum : <input id="inputsum" placeholder="eg: 54,56">
+        <input type="button" value="Calculate" onclick="sum()">
+        <hr>
+    </div>
+    <!-- Binary Search -->
+    <div class="q15">
+        <h3> Binary Search </h3>>
+        Enter the array list <input id="barray" placeholder="eg: 54,56"><br>
+        Enter the number to Search : <input id="bsearch">
+        <input type="button" value="Find" onclick="binsearch()">
+        <span id="binresult"> </span>
+        <hr>
+    </div>
+
+    <!--  Merge Sort  -->
+    <div class="q16">
+        <h3> Merge Sort </h3>
+        First Array : <input id="marr1"> <br>
+        Second Array : <input id="marr2">
+        <button onclick=""> Sort </button>
+        <span id="mergeResult" style="font-size:2em"> </span>
+        <hr>
+    </div>
+
+    <!--join all elements -->
+    <div class="q17">
+        <h3> Join All Array of strings to one statment </h3>
+        Enter the strings : <input id="jstr" placeholder="eg: str,str2,str3">
+        <input type="button" value="Join" onclick="jstrin()"> <br>
+        <span id="jstrout" style="color:green"> </span>
+        <hr>
+    </div>
+    <!-- unjoin all elements -->
+    <div class="q18">
+        <h3>Write a Statement and get its array</h3>
+        Enter the string : <input id="ujstr" placeholder="eg: My Name Is Rabish">
+        <input type="button" value="UnJoin" onclick="ujstrin()"> <br>
+        <span id="ujstrout" style="color:green"> </span>
+        <hr>
+
+    </div>
+
+    <!-- q19 url decompision -->
+    <div class="q19">
+        <h3> Url Decomposer </h3>
+        Paste The URL : <input id="urlinput">
+        <br>
+        <span id="proto" style="font-size: 2em;"> </span> <br>
+        <span id="domin" style="font-size: 2em;"> </span> <br>
+        <span id="page" style="font-size: 2em;"> </span> <br>
+        <span id="exten" style="font-size: 2em;"> </span> <br>
+
+        <hr>
+    </div>
+
+</body>
+<script>
+
+    // binary search 
+
+
+    // merge sort 
+
+    // url decompisiton 
+
+    document.getElementById("urlinput").addEventListener("input", function () {
+
+        let userurl = new URL(urlinput.value);
+        console.log(userurl);
+        proto.innerHTML = "Protocol: " + userurl.protocol;
+        domin.innerHTML = "Domain: " + userurl.hostname;
+        page.innerHTML = "Page : " + userurl.pathname;
+        exten.innerHTML = "Extension: " + userurl.pathname.split(".").pop();
+
+    })
+
+    function cal() {
+
+        var inputs = document.getElementById("inputarr").value.split(",");
+
+
+        var a = inputs[0];
+        if (inputs == "") {
+            alert("Please Enter the values ");
+            document.getElementById("inputarr").focus()
+        }
+        else {
+            for (var i = 0; i < inputs.length; i++) {
+
+                if (Number(inputs[i]) >= a) {
+                    a = Number(inputs[i]);
+                }
+            }
+            alert('The Largest Number is ' + a);
+        }
+    }
+
+    // sum function 
+
+    function sum() {
+        var inputsa = document.getElementById("inputsum").value.split(",")
+
+        var sum = 0;
+        for (var i = 0; i < inputsa.length; i++) {
+            sum += Number(inputsa[i]);
+        }
+        alert("The Sum value is " + sum);
+    }
+
+    // Join All String Array in one 
+    function jstrin() {
+        let strarr = document.getElementById("jstr").value.split(",")
+        let strarrj = strarr.join("");
+        console.log(strarrj);
+        jstrout.innerHTML = "The Joined String is = " + strarrj
+    }
+    // unjoin all string 
+
+    function ujstrin() {
+        let ustrarr = document.getElementById("ujstr").value.split(" ")
+        ujstrout.innerHTML = "The Unjoin String is " + ustrarr
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,125 @@
+<html lang="en">
+
+<head>
+    <title> Combo box </title>
+</head>
+
+<body>
+
+    <div name="container">
+        <div name="recordblock[]">
+            Enter the data
+            <input type="text" name="inputroll" placeholder="Roll no" />
+            <input type="text" name="fname" placeholder="first name" />
+            <input type="text" name="percentage" placeholder="percentage" />
+
+            <button type="button" name="addbtn" onclick="addb()"> Add </button>
+            <button type="button" name="rembtn" onclick="reovebtn(this)"> Remove </button>
+            <br>
+        </div>
+    </div>
+    <button name="avg" onclick="avg()"> Calculate Average </button>
+    <span name="result"> </span>
+    <hr>
+    <!-- COMBO BOX  -->
+    <div class="selectc">
+        <button type="button" onclick="addc()"> Add Countries </button>
+        <h1> Country Selection </h1> <br>
+        <select id="country"> </select>
+
+    </div>
+    <hr>
+    <!-- Combo box list items from input box -->
+    <div class="textoption">
+        Enter the countries Names: <input id="addcinput">
+        <button type="button" id="addinbtn" onclick="adinc()"> Add To Options </button>
+        <br>
+        <h3> Select the country from Here </h3>
+        <select id="addincountry"> </select>
+        <span id="resultforcount"></span>
+    </div>
+    <hr>
+    <!-- Dependent combo box -->
+
+    <div class="dependbox">
+       Select Country  <select id="mbox">
+        <option value=""> Select Country </option>
+       <option value="India"> INDIA</option>
+       <option value="USA"> USA</option>
+       <option value="UK"> UK</option>
+    </select>
+
+    Select State <select id="cbox"> </select>
+    </div>
+
+
+</body>
+<script>
+
+    // dependent combo box code 
+      var indiao = "U.P|BIHAR|GUJARAT|NEPAL|RAJESTHAN"  
+    
+
+
+    // adding the countries which user has input in the inputbox 
+
+    function adinc() {
+        var nmes = addcinput.value.split(",")
+        
+        if (addcinput.value == "") {
+            alert("blank name ");
+        }
+        addincountry.options[0] = new Option("Select Country", "")
+
+        for (var i = 0; i < nmes.length; i++) {
+            addincountry.options[i + 1] = new Option(nmes[i], nmes[i]);
+        }
+
+    }
+
+    // on simple adding the names to list or options //
+    var carr = ["India", "USA", "UK"];
+
+    function addc() {
+        country.options[0] = new Option("Select Country", "")
+
+        for (var i = 0; i < carr.length; i++) {
+            country.options[i + 1] = new Option(carr[i], carr[i]);
+        }
+
+    }
+
+    // function to add array of elements 
+    function addb() {
+
+        var copy = document.getElementsByName("recordblock[]")[0].cloneNode(true);
+        var des = document.getElementsByName("container")[0];
+        des.appendChild(copy);
+
+    }
+    // processing the data 
+    function avg() {
+        var sum = 0;
+        var a = document.getElementsByName("percentage");
+
+        for (var i = 0; i < a.length; i++) {
+            sum += Number(a[i].value);
+        }
+
+        var avger = sum / (a.length);
+        var x = document.createElement("h1");
+        x.textContent = avger;
+        var y = document.getElementsByName("container")[0]
+        y.appendChild(x);
+
+        // alert(avger);
+    }
+
+    // removing the button 
+    function reovebtn(x) {
+        x.parentNode.remove();
+    }
+
+</script>
+
+</html>

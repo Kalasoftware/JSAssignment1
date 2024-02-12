@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title> Form Validation</title>
+    <script src="/js/valid.js"> </script>
+</head>
+
+<body>
+    <form name="regForm" method="post" onsubmit="return validform()" action="https://www.google.com">
+        Enter the Name : <input name="namin" oninput="nvalid()" /> <span id="nmeerr"></span> <br>
+        Enter the Email : <input name="emailin" type="email" oninput="evalid()" /> <span id="nerr"></span> <br>
+        Gender : <input type="radio" name="gender" value="Male">Male <input type="radio" name="gender" value="Female">
+        Female <br>
+        Select hobbies : <input type="checkbox" name="hobby[]" value="Reading">Reading
+        <input type="checkbox" name="hobby[]" value="Writing">Writing
+        <input type="checkbox" name="hobby[]" value="Programming">Programming
+        <br>
+        <button value="submit" id="subbtn">Submit</button>
+        <button value="reset" onclick="restv()"> Reset </button>
+    </form>
+    <hr>
+    <div id="displaydata">
+        <p id="namedata"> </p>
+        <p id="emaildata"> </p>
+        <p id="genderdata"> </p>
+        <p id="checkdata"> </p>
+    </div>
+</body>
+
+</html>

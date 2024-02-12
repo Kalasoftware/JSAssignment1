@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+            <div id="maindiv"> 
+                <p id="p1"> This is paragarph 1  </p>
+                <button type="button" onclick="p1.style.visibility='hidden'"> hide </button>
+                <button type="button" onclick="p1.style.visibility='visible'"> Visible </button>
+            </div>
+        
+            <span id="res"> 
+
+            </span>
+
+
+    </body>
+
+    <script>
+
+        /* adding the new ndde */
+        var name = maindiv.nodeName;
+        var nodeT = maindiv.nodeType
+        var cnodet = maindiv.childNodes[0].nodeName
+        res.innerHTML = "node name " + name + " Type " + nodeT + " Child node " + cnodet
+        
+        var oldnode = maindiv.childNodes[0];
+
+        /* creating the new paragraph */
+
+
+    </script>
+
+</html>

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title> String </title>
+</head>
+
+<body>
+
+    <!-- Palindrome or Not -->
+    <div class="palindiv">
+        <h4> Palindrome or not </h4>
+        Enter the string to check : <input id="palinin" name="palin" />
+        <h4 name="presult"></h4>
+        <hr>
+    </div>
+    <!-- first letter of string upper case  -->
+
+    <div class="ustrdiv">
+        <h4> first letter of string upper case </h4>
+        Enter the string : <input id="ustrinput" />
+        <h4 name="uresult"></h4>
+        <hr>
+    </div>
+
+
+    <!-- Check extension of file -->
+    <div class="filextcdiv">
+        <h4> Extension of the file name</h4>
+        Enter the File name : <input id="extinput" />
+        <h4 name="fresult"></h4>
+        <hr>
+    </div>
+
+    <!-- longest word finder  -->
+    <div class="q8">
+        <h3> Longest Word Finder </h3>
+        Enter the string : <input id="lstring" oninput="">
+        <button onclick="longword(document.getElementById('lstring').value)"> find </button>
+        <h3 id="longResult"> </h3>
+    </div>
+
+</body>
+<script>
+    // plaindrome or not check 
+    document.getElementById("palinin").addEventListener("input", function () {
+        var ostr = palinin.value.toLowerCase()// orginal string stored here 
+        var rstr = ostr.split('')
+        var revstr = rstr.reverse().join('')
+        if (ostr === revstr) {
+            document.querySelectorAll("h4")[1].innerHTML = ostr + " is Palindrome"
+        }
+        else
+            document.querySelectorAll("h4")[1].innerHTML = ostr + " is Not Palindrome"
+    })
+
+    document.getElementById("ustrinput").addEventListener("keyup", function () {
+        var inputValue = this.value.trim();
+        var firstWord = inputValue.split(" ")[0];
+        var capitalizedFirstWord = firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
+        document.querySelectorAll("h4")[3].innerHTML = capitalizedFirstWord;
+    });
+
+    // getting the file extension 
+
+    document.getElementById("extinput").addEventListener("input", function () {
+        var filen = extinput.value
+        var ext = filen.split('.')
+        document.querySelectorAll("h4")[5].innerHTML = ext[1]
+
+    })
+
+    // longest word finder 
+
+    function longword(strs) {
+        let words = strs.split(" ");
+        let maxw = "";
+        let maxwlength = 0;
+
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].length > maxw) length
+            {
+                maxw = words[i];
+                maxwlength = words[i].length;
+            }
+        }
+
+        document.getElementById("longResult").innerHTML = `the longest word is ${maxw}`;
+
+    }
+
+</script>
+
+</html>
